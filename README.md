@@ -59,10 +59,10 @@ MIT
 <!-- builder:roadmap:start -->
 ## Status
 
-**In active development:** 0 of 2 milestones done.
+**In active development:** 1 of 2 milestones done.
 
 ## Roadmap
 
-- [ ] **MinHash + LSH core with a runnable scan command**: Implement k-shingle extraction, deterministic MinHash signatures with numpy, LSH banding for candidate pairs, exact-Jaccard verification, and union-find clustering. Ship a typer CLI `doppel scan <dir>` that prints candidate near-duplicate pairs. Add pytest coverage for hash determinism, signature-vs-exact Jaccard error bounds on known near-dups, LSH recall on a synthetic duplicate set, and a CLI smoke test on bundled sample docs. Runnable and green by end of session.
+- [x] **MinHash + LSH core with a runnable scan command**: Implement k-shingle extraction, deterministic MinHash signatures with numpy, LSH banding for candidate pairs, exact-Jaccard verification, and union-find clustering. Ship a typer CLI `doppel scan <dir>` that prints candidate near-duplicate pairs. Add pytest coverage for hash determinism, signature-vs-exact Jaccard error bounds on known near-dups, LSH recall on a synthetic duplicate set, and a CLI smoke test on bundled sample docs. Runnable and green by end of session.
 - [ ] **Clustered Rich report, tuning flags, and README demo**: Turn candidate pairs into scored clusters with a representative document, render a sorted Rich table plus optional `--json` export, and add `--threshold`, `--shingle-size`, `--num-perm`, and `--bands` flags with validation. Bundle a 50-file mixed sample corpus (paraphrases, copy-paste, unique docs) and write a README with real captured CLI output showing clusters like doc3.md ~ doc17.md (0.82). Finalize the full offline test suite and verify the showcase command end to end.
 <!-- builder:roadmap:end -->
