@@ -59,10 +59,17 @@ MIT
 <!-- builder:roadmap:start -->
 ## Status
 
-**In active development:** 1 of 2 milestones done.
+**Complete.** Doppel is a complete offline near-duplicate detection CLI that uses deterministic MinHash signatures and LSH banding to cluster paraphrased or copy-pasted documents into scored groups. It ships with a Rich table report plus JSON export, configurable threshold/shingle/perm/band flags, a bundled 50-document sample corpus, and a fully offline test suite (12 tests passing).
 
 ## Roadmap
 
 - [x] **MinHash + LSH core with a runnable scan command**: Implement k-shingle extraction, deterministic MinHash signatures with numpy, LSH banding for candidate pairs, exact-Jaccard verification, and union-find clustering. Ship a typer CLI `doppel scan <dir>` that prints candidate near-duplicate pairs. Add pytest coverage for hash determinism, signature-vs-exact Jaccard error bounds on known near-dups, LSH recall on a synthetic duplicate set, and a CLI smoke test on bundled sample docs. Runnable and green by end of session.
-- [ ] **Clustered Rich report, tuning flags, and README demo**: Turn candidate pairs into scored clusters with a representative document, render a sorted Rich table plus optional `--json` export, and add `--threshold`, `--shingle-size`, `--num-perm`, and `--bands` flags with validation. Bundle a 50-file mixed sample corpus (paraphrases, copy-paste, unique docs) and write a README with real captured CLI output showing clusters like doc3.md ~ doc17.md (0.82). Finalize the full offline test suite and verify the showcase command end to end.
+- [x] **Clustered Rich report, tuning flags, and README demo**: Turn candidate pairs into scored clusters with a representative document, render a sorted Rich table plus optional `--json` export, and add `--threshold`, `--shingle-size`, `--num-perm`, and `--bands` flags with validation. Bundle a 50-file mixed sample corpus (paraphrases, copy-paste, unique docs) and write a README with real captured CLI output showing clusters like doc3.md ~ doc17.md (0.82). Finalize the full offline test suite and verify the showcase command end to end.
+
+## Ideas for future work
+
+- Add text extraction for binary formats (PDF, DOCX) to expand supported inputs
+- Implement incremental scanning with on-disk signature caching for large corpora
+- Add a Rich progress bar for directories containing thousands of files
+- Support custom stop-word lists and language-aware shingling
 <!-- builder:roadmap:end -->
